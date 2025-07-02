@@ -1,0 +1,450 @@
+/* =================================================================
+   STYLE BARU - WARUNG SORABI & TEMPE
+================================================================= */
+
+/* 1. VARIABEL & GLOBAL
+------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --color-primary: #a16207;   /* Coklat Keemasan */
+    --color-secondary: #4d7c0f; /* Hijau Daun */
+    --color-dark: #1c1917;      /* Hitam Arang */
+    --color-light: #fefce8;     /* Krem Hangat */
+    --color-text: #44403c;      /* Abu-abu Coklat */
+    --font-heading: 'Lora', serif;
+    --font-body: 'Poppins', sans-serif;
+    --border-radius: 12px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-light);
+    color: var(--color-text);
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-dark);
+    font-weight: 700;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.8rem;
+    font-style: italic;
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: #78716c;
+}
+
+/* 2. NAVBAR
+------------------------------------*/
+.navbar {
+    transition: all 0.4s ease;
+    padding: 20px 0;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    padding: 10px 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.navbar .navbar-brand {
+    font-family: var(--font-heading);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar .nav-link {
+    color: var(--color-dark);
+    font-weight: 400;
+    margin: 0 15px;
+    position: relative;
+}
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: 100%;
+}
+
+
+/* 3. HERO SECTION
+------------------------------------*/
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 4.5rem;
+    line-height: 1.2;
+}
+
+.hero-text .text-highlight {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--color-primary);
+}
+
+.hero-text .lead {
+    font-size: 1.2rem;
+    max-width: 500px;
+    margin: 20px 0 30px;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 14px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #78350f; /* Lebih gelap */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hero-image {
+    border-radius: var(--border-radius);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: rotate(3deg);
+}
+
+
+/* 4. MENU CARD
+------------------------------------*/
+.menu-card {
+    border: 1px solid #e7e5e4;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background-color: #fff;
+}
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-color: var(--color-primary);
+}
+.menu-card-img {
+    height: 250px;
+    object-fit: cover;
+}
+.menu-card-body {
+    padding: 25px;
+}
+.menu-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.menu-card-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-family: var(--font-body);
+}
+
+/* public/css/style.css */
+
+/* ... CSS lain ... */
+
+
+/* 7. CARD (MENU, LOKASI, DLL)
+------------------------------------------------- */
+.card-custom {
+    border: 1px solid #f3f4f6; /* Garis tepi yang sangat halus */
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05); /* Bayangan yang sangat tipis */
+    transition: all 0.3s ease;
+    background: white;
+    height: 100%;
+    display: flex; /* Aktifkan flexbox untuk kartu */
+    flex-direction: column; /* Susun item secara vertikal */
+}
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+.card-custom-img {
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+.card-custom-body { 
+    padding: 20px;
+    display: flex; /* Aktifkan flexbox untuk body kartu */
+    flex-direction: column;
+    flex-grow: 1; /* Biarkan body kartu mengisi sisa ruang */
+}
+.card-custom-title { 
+    font-size: 1.4rem; 
+    font-weight: 700; 
+    margin-bottom: 8px; /* Kurangi margin bawah */
+}
+
+/* Bagian deskripsi, kita buat agar bisa tumbuh */
+.card-custom-description {
+    color: var(--color-text);
+    font-size: 0.95rem;
+    flex-grow: 1; /* Ini akan mendorong bagian bawah kartu ke paling bawah */
+    margin-bottom: 20px;
+}
+
+/* Bagian bawah kartu (harga & tombol) */
+.card-custom-footer {
+    margin-top: auto; /* Mendorong ini ke bagian paling bawah */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f3f4f6; /* Garis pemisah halus */
+    padding-top: 15px;
+}
+
+.card-custom-price { 
+    font-size: 1.5rem; 
+    color: var(--color-primary); 
+    font-weight: 900;
+    font-family: var(--font-body);
+}
+
+/* Gaya baru untuk tombol "Tambah" */
+.btn-add-to-cart {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 50px; /* Membuatnya bulat */
+    padding: 8px 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+.btn-add-to-cart:hover {
+    background-color: #78350f; /* Warna lebih gelap saat hover */
+    transform: scale(1.05);
+    box-shadow: var(--shadow-soft);
+    color : white;
+}
+/* ... */
+
+
+/* 5. FOOTER
+------------------------------------*/
+/* public/css/style.css */
+
+/* ... CSS lain ... */
+
+
+/* 9. FOOTER
+------------------------------------------------- */
+.footer {
+    background-color: var(--color-bg-light);
+    color: var(--color-text);
+    padding: 80px 0 30px; /* Menyesuaikan padding dari section-padding */
+    border-top: 1px solid #e5e7eb; /* Garis pemisah halus dari konten utama */
+}
+
+.footer-brand {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    color: var(--color-dark);
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+.footer-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.footer-links li a {
+    padding: 5px 0;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: var(--color-primary);
+    transform: translateX(5px);
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.footer-contact li i {
+    color: var(--color-primary);
+    font-size: 1rem;
+    margin-right: 15px;
+    margin-top: 5px;
+    width: 20px; /* Memberi lebar tetap agar teks sejajar */
+    text-align: center;
+}
+
+.footer-social-icons a.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d4d4d8;
+    border-radius: 50%;
+    color: var(--color-text);
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.footer-social-icons a.social-icon:hover {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 25px;
+    margin-top: 40px;
+}
+
+/* =================================================================
+   10. MEDIA QUERIES (RESPONSIVE DESIGN) - VERSI DIPERBAIKI
+================================================================= */
+
+/* -- Untuk Tablet (Layar <= 992px) -- */
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 75px; 
+    }
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    .hero-section {
+        text-align: center;
+    }
+    .hero-image-wrapper {
+        margin-top: 50px;
+    }
+}
+
+
+/* -- Untuk Ponsel (Layar <= 767.98px) -- */
+@media (max-width: 767.98px) {
+    .section-padding {
+        padding: 50px 0;
+    }
+
+    /* Ukuran font dikecilkan lebih lanjut */
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .page-header {
+        padding: 100px 0 50px;
+    }
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    /* Membuat header admin lebih rapi */
+    .admin-header {
+        flex-direction: column; /* Susun vertikal */
+        align-items: flex-start; /* Rata kiri */
+        gap: 15px; /* Jarak antar elemen */
+    }
+    .admin-header div {
+        display: flex;
+        flex-wrap: wrap; /* Izinkan tombol turun baris jika perlu */
+        gap: 8px; /* Jarak antar tombol */
+    }
+    .admin-header .btn {
+        flex-grow: 1; /* Biarkan tombol mengisi ruang jika perlu */
+    }
+
+    /* Judul dan tombol keranjang di halaman menu */
+    #menu-header {
+        text-align: center; /* Pusatkan semua di layar kecil */
+    }
+    #menu-header .text-md-start,
+    #menu-header .text-md-end {
+        text-align: center !important;
+    }
+    #menu-header .col-md-6:last-child {
+        margin-top: 20px; /* Beri jarak antara judul dan tombol */
+    }
+
+    /* Footer menjadi rata tengah */
+    .footer .text-md-start,
+    .footer .text-md-end {
+        text-align: center !important;
+    }
+}
+
+
+/* -- Untuk Ponsel Sangat Kecil (Layar <= 576px) -- */
+@media (max-width: 575.98px) {
+    .card-custom-body {
+        padding: 20px;
+    }
+    .card-custom-title {
+        font-size: 1.2rem;
+    }
+    .card-custom-price {
+        font-size: 1.3rem;
+    }
+    .btn-add-to-cart {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+    }
+
+    /* Perkecil lagi header admin */
+    .admin-header {
+        padding: 0.8rem;
+    }
+    .admin-header h5 {
+        font-size: 1rem;
+    }
+    .admin-header .btn-sm {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
